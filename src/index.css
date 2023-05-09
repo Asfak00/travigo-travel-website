@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  /* scroll-hidden */
+  .scroll-hidden::-webkit-scrollbar {
+    display: none !important;
+    scrollbar-width: 0;
+  }
+
+  /* container */
+  .travigo-container {
+    @apply w-[85vw] xl:w-[95vw] m-auto;
+  }
+
+  /* buttons */
+  .button-emrad {
+    @apply bg-gradient-to-b from-emerald-500 to-green-500 text-white py-1.5 px-9 shadow-lg shadow-emerald-400 sm:text-sm rounded-full transition-all duration-200 active:scale-90 sm:w-48;
+  }
+  .button-light {
+    @apply bg-gradient-to-b from-white to-slate-100 text-black py-1.5 px-9 shadow-lg shadow-slate-200 sm:text-sm rounded-full transition-all duration-200 active:scale-90 sm:w-48;
+  }
+
+  /* drop-shadow-emrad */
+  .drop-shadow-emrad {
+    filter: drop-shadow(0.1rem 0.1rem 0.8rem rgb(74 222 128 / 80%));
+  }
+
+  /* popup menu */
+  .showpopup {
+    opacity: 1;
+    visibility: visible;
+    transform: skewY(0deg) translateY(10px);
+  }
+  .hidepopup {
+    opacity: 0;
+    visibility: hidden;
+    transform: skewY(3deg) translateY(-30px);
+  }
+
+  /* sticky navbar */
+  .nav-default {
+    @apply flex items-center justify-center fixed top-0 left-0 right-0 lg:top-5 transition-all duration-200;
+  }
+
+  .nav-sticky {
+    @apply bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm h-[13vh] bg-opacity-20 flex items-center fixed top-0 right-0 left-0 opacity-100 z-[100] shadow-sm shadow-slate-100 lg:h-[7vh];
+  }
+}
